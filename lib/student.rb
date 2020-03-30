@@ -14,7 +14,8 @@ students_array.each { |hash| Student.new(hash)}
   end
 
   def add_student_attributes(attributes_hash)
-attributes_hash.each
+attributes_hash.each {|k, v| self.send("#{k}=", v)}
+self
   end
 
   def self.all
